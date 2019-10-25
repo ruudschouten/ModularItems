@@ -7,6 +7,8 @@ namespace Stats
     [Serializable]
     public class DamageStat
     {
+        [SerializeField] private int _index;
+        
         [SerializeField] private DamageType type;
         [SerializeField] private int min;
         [SerializeField] private int max;

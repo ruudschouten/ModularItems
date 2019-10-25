@@ -151,22 +151,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   quality: 0
-  rarity: {fileID: 11400000, guid: 1d46277a560490021ac95788fec9b654, type: 2}
+  rarity: {fileID: 0}
   requirements:
     level: 0
     strength: 0
     dexterity: 0
     intelligence: 0
-  handsNeeded: 0
+  handsNeeded: 1
   damage:
-  - type: {fileID: 11400000, guid: e98ad438bdcc0304192b39116293624c, type: 2}
-    min: 3
-    max: 5
-  - type: {fileID: 11400000, guid: e98ad438bdcc0304192b39116293624c, type: 2}
-    min: 3
-    max: 4
-  criticalChance: 0
-  attackSpeed: 0
+  - _index: 0
+    type: {fileID: 11400000, guid: e98ad438bdcc0304192b39116293624c, type: 2}
+    min: 1
+    max: 2
+  criticalChance: 0.05
+  attackSpeed: 1
   components: []
 --- !u!4 &634004851
 Transform:

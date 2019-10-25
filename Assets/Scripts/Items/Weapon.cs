@@ -8,10 +8,10 @@ namespace Items
 {
     public class Weapon : BaseItem
     {
-        [SerializeField] private int handsNeeded;
+        [SerializeField] private int handsNeeded = 1;
         [SerializeField] private List<DamageStat> damage;
-        [SerializeField] private float criticalChance;
-        [SerializeField] private float attackSpeed;
+        [SerializeField] private float criticalChance = 0.05f;
+        [SerializeField] private float attackSpeed = 1f;
 
         [SerializeField] private List<WeaponComponent> components;
 
@@ -26,9 +26,11 @@ namespace Items
             get
             {
                 if (_statistics != null) return _statistics;
-                if (components.Count == 0) return _statistics;
                 
                 _statistics = new Statistics();
+                
+                if (components.Count == 0) return _statistics;
+                
                 foreach (var modifier in components.SelectMany(comp => comp.Modifiers))
                 {
                     _statistics += modifier.Statistics;
