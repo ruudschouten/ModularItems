@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "Damage Type", menuName = "Modular Stats/Damage Type", order = 1)]
+    [CreateAssetMenu(fileName = "Damage Type", menuName = "Modular Items/Damage Type", order = 1)]
     public class DamageType : ScriptableObject
     {
         [SerializeField] private string type;

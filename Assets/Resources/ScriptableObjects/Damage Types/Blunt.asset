@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19091ff33b8400854b9b648578103b0c, type: 3}
-  m_Name: Magic
+  m_Script: {fileID: 11500000, guid: d1d90e4617834632a311cfa90193de28, type: 3}
+  m_Name: Blunt
   m_EditorClassIdentifier: 
-  name: Magic
-  colour: {r: 0.21782663, g: 0.4787272, b: 0.8396226, a: 1}
-  maxModifiers: 2
+  type: Physical
+  colour: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}

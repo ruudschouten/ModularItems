@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ScriptableObjects.Collections
 {
-    [CreateAssetMenu(menuName = "Lore/Sets/Damage Type")]
+    [CreateAssetMenu(fileName = "_Collection", menuName = "Modular Items/Collections/Damage Type")]
     public class DamageTypeCollection : ScriptableCollection<DamageType>
     {
     }

@@ -2,7 +2,6 @@
 
 namespace ScriptableObjects
 {    [CreateAssetMenu(fileName = "Item Rarity", menuName = "Modular Items/Rarity", order = 1)]
-
     public class ItemRarity : ScriptableObject
     {
         [SerializeField] private new string name;

@@ -1,4 +1,5 @@
 ﻿using ScriptableObjects;
+using ScriptableObjects.DropDown;
 using Stats;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace Items
     {
         [SerializeField] private new string name;
         [SerializeField] private int quality;
-        [SerializeField] private ItemRarity rarity;
+        [SerializeField] private ItemRarityDropdown rarity;
         [SerializeField] private Requirements requirements;
 
         public string Name
@@ -23,7 +24,7 @@ namespace Items
             set => quality = value;
         }
         
-        public ItemRarity Rarity => rarity;
+        public ItemRarity Rarity => rarity.Type;
         public Requirements Requirements => requirements;
     }
 }

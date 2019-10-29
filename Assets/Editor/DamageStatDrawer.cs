@@ -1,5 +1,5 @@
-using Editor.Helpers;
 using ScriptableObjects;
+using ScriptableObjects.Helpers;
 using Stats;
 using UnityEditor;
 using UnityEngine;
@@ -18,7 +18,8 @@ namespace Editor
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            DamageTypeHelper.LoadDamageTypes();
+            var typeHelper = new DamageTypeHelper();
+            typeHelper.LoadTypes();
             // Get properties
             var damageType = property.FindPropertyRelative("type");
             var minValue = property.FindPropertyRelative("min");
@@ -48,31 +49,37 @@ namespace Editor
             var labelWidth = 35;
 
             var prevXmin = position.xMin;
-            var typeRect = new Rect(position.x, position.y, position.width / 2f, EditorGUIUtility.singleLineHeight);
-            var minLabelRect = new Rect(position.x + 5, nextLine, labelWidth, EditorGUIUtility.singleLineHeight);
-            position.xMin = minLabelRect.xMax + 5;
-            var minRect = new Rect(position.x, nextLine, 55, EditorGUIUtility.singleLineHeight);
+            
+            var typeLabelRect = new Rect(position.x, position.y, 70, EditorGUIUtility.singleLineHeight);
+            position.xMin = typeLabelRect.xMax + 5;
+            var typeRect = new Rect(position.x, position.y, position.width - 5, EditorGUIUtility.singleLineHeight);
             position.xMin = prevXmin;
-            var maxLabelRect = new Rect(minRect.xMax + 2, nextLine, labelWidth, EditorGUIUtility.singleLineHeight);
+            
+            var minLabelRect = new Rect(position.x, nextLine, labelWidth, EditorGUIUtility.singleLineHeight);
+            position.xMin = minLabelRect.xMax + 5;
+            var minRect = new Rect(position.x, nextLine, position.center.x - (minLabelRect.xMax + 5), EditorGUIUtility.singleLineHeight);
+            position.xMin = minRect.xMax + 5;
+            var maxLabelRect = new Rect(position.x, nextLine, labelWidth, EditorGUIUtility.singleLineHeight);
             position.xMin = maxLabelRect.xMax + 5;
             var maxRect = new Rect(maxLabelRect.xMax, nextLine, position.width, EditorGUIUtility.singleLineHeight);
             position.xMin = prevXmin;
 
+            var labelStyle = EditorStyles.miniLabel;
+            
             EditorGUI.BeginChangeCheck();
 
-            index.intValue = EditorGUI.Popup(typeRect, index.intValue, DamageTypeHelper.GetStringSet(),
+            EditorGUI.LabelField(typeLabelRect, "Damage Type", labelStyle);
+            
+            index.intValue = EditorGUI.Popup(typeRect, index.intValue, typeHelper.GetStringTypes(),
                 EditorStyles.toolbarDropDown);
             if (EditorGUI.EndChangeCheck())
             {
-                damageType.objectReferenceValue = DamageTypeHelper.GetFromIndex(index.intValue);
+                damageType.objectReferenceValue = typeHelper.GetFromIndex(index.intValue);
             }
             else
             {
-                index.intValue = DamageTypeHelper.GetIndex(damageType.objectReferenceValue as DamageType);
+                index.intValue = typeHelper.GetIndex(damageType.objectReferenceValue as DamageType);
             }
-
-            // Draw fields - pass GUIContent.none to each so they are drawn without labels
-            var labelStyle = EditorStyles.miniLabel;
             
             EditorGUI.LabelField(minLabelRect, "Min", labelStyle);
             EditorGUI.PropertyField(minRect, minValue, GUIContent.none);

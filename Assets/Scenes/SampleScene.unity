@@ -120,7 +120,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &634004849
+--- !u!1 &314222779
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,30 +128,73 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 634004851}
-  - component: {fileID: 634004850}
+  - component: {fileID: 314222781}
+  - component: {fileID: 314222782}
+  - component: {fileID: 314222780}
   m_Layer: 0
-  m_Name: Blade
+  m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &634004850
+--- !u!114 &314222780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634004849}
+  m_GameObject: {fileID: 314222779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7cd895b881e410493d3b7b1d9155043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stat:
+    _index: 0
+    type: {fileID: 11400000, guid: e98ad438bdcc0304192b39116293624c, type: 2}
+    min: 2
+    max: 3
+  Type:
+    type: {fileID: 11400000, guid: 222d9ac3d4ae95bb69e763bbdcbb4c88, type: 2}
+    index: 1
+  RarityDropdown:
+    type: {fileID: 11400000, guid: cf8dc7741bef14e1bbb4bc232f1f6611, type: 2}
+    index: 1
+  ArmourSlot:
+    type: {fileID: 11400000, guid: 569240dffb709fe99a0c164cf3eac0aa, type: 2}
+    index: 0
+--- !u!4 &314222781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314222779}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &314222782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314222779}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c34d88953d58434ff98e07c4f7b3847e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   quality: 0
-  rarity: {fileID: 0}
+  rarity:
+    type: {fileID: 11400000, guid: 17a5fb61ffc9a736bb3da593424ada2f, type: 2}
+    index: 0
   requirements:
     level: 0
     strength: 0
@@ -161,25 +204,11 @@ MonoBehaviour:
   damage:
   - _index: 0
     type: {fileID: 11400000, guid: e98ad438bdcc0304192b39116293624c, type: 2}
-    min: 1
-    max: 2
+    min: 0
+    max: 0
   criticalChance: 0.05
   attackSpeed: 1
   components: []
---- !u!4 &634004851
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 634004849}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
