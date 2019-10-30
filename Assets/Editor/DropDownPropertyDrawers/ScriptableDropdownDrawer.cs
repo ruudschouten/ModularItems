@@ -24,8 +24,8 @@ namespace Editor.DropDownPropertyDrawers
 
             EditorGUI.BeginProperty(position, label, property);
             
-            var typeLabelRect = new Rect(position.x, position.y, 70, EditorGUIUtility.singleLineHeight);
-            position.xMin = typeLabelRect.xMax + 5;
+            var typeLabelRect = new Rect(position.x, position.y, EditorGUIUtility.labelWidth, EditorGUIUtility.singleLineHeight);
+            position.xMin = typeLabelRect.xMax;
             var typeRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
 
             EditorGUI.LabelField(typeLabelRect, helper.GetTypeName(), GUIStyle.none);
