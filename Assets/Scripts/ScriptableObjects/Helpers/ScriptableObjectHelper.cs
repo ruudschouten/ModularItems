@@ -9,18 +9,11 @@ namespace ScriptableObjects.Helpers
     {
         protected List<T> Types;
         protected string[] StringTypes;
-        
-        private string _resourcePath;
 
-        protected ScriptableObjectHelper(string path)
-        {
-            _resourcePath = path;
-        }
-        
         public void LoadTypes()
         {
             Types = new List<T>();
-            var scriptableObjects = (TCollection) Resources.Load(_resourcePath, typeof(TCollection));
+            var scriptableObjects = (TCollection) Resources.Load(GetResourcePathFromCollection(), typeof(TCollection));
             
             StringTypes = new string[scriptableObjects.Entries.Count];
 
@@ -60,6 +53,11 @@ namespace ScriptableObjects.Helpers
         public T GetFromIndex(int index)
         {
             return Types[index];
+        }
+
+        private string GetResourcePathFromCollection()
+        {
+            return $"ScriptableObjects/{GetTypeName()}/_Collection";
         }
     }
 }
