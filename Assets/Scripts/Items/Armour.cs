@@ -1,4 +1,5 @@
 ﻿using ScriptableObjects;
+using ScriptableObjects.Types;
 using UnityEngine;
 
 namespace Items

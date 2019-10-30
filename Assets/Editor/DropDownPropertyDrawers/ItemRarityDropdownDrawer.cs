@@ -2,6 +2,7 @@ using ScriptableObjects;
 using ScriptableObjects.Collections;
 using ScriptableObjects.DropDown;
 using ScriptableObjects.Helpers;
+using ScriptableObjects.Types;
 using UnityEditor;
 
 namespace Editor.DropDownPropertyDrawers

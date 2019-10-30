@@ -130,7 +130,6 @@ GameObject:
   m_Component:
   - component: {fileID: 314222781}
   - component: {fileID: 314222782}
-  - component: {fileID: 314222780}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Untagged
@@ -138,32 +137,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &314222780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314222779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7cd895b881e410493d3b7b1d9155043, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Stat:
-    _index: 0
-    type: {fileID: 11400000, guid: e98ad438bdcc0304192b39116293624c, type: 2}
-    min: 2
-    max: 3
-  Type:
-    type: {fileID: 11400000, guid: 222d9ac3d4ae95bb69e763bbdcbb4c88, type: 2}
-    index: 1
-  RarityDropdown:
-    type: {fileID: 11400000, guid: cf8dc7741bef14e1bbb4bc232f1f6611, type: 2}
-    index: 1
-  ArmourSlot:
-    type: {fileID: 11400000, guid: 569240dffb709fe99a0c164cf3eac0aa, type: 2}
-    index: 0
 --- !u!4 &314222781
 Transform:
   m_ObjectHideFlags: 0
@@ -204,8 +177,8 @@ MonoBehaviour:
   damage:
   - _index: 0
     type: {fileID: 11400000, guid: e98ad438bdcc0304192b39116293624c, type: 2}
-    min: 0
-    max: 0
+    min: 2
+    max: 4
   criticalChance: 0.05
   attackSpeed: 1
   components: []

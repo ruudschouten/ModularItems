@@ -1,3 +1,4 @@
+using ScriptableObjects.Types;
 using UnityEngine;
 
 namespace ScriptableObjects.Collections

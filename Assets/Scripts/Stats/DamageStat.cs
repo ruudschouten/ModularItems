@@ -1,5 +1,6 @@
 using System;
 using ScriptableObjects;
+using ScriptableObjects.Types;
 using UnityEngine;
 
 namespace Stats
