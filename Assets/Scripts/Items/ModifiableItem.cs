@@ -5,8 +5,8 @@ namespace Items
 {
     public class ModifiableItem : BaseItem
     {
-        [SerializeField] private List<BaseItemModifier> modifiers;
+        [SerializeField] private List<Modifier> modifiers;
 
-        public List<BaseItemModifier> Modifiers => modifiers;
+        public List<Modifier> Modifiers => modifiers;
     }
 }

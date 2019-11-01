@@ -175,8 +175,8 @@ MonoBehaviour:
     intelligence: 0
   handsNeeded: 1
   damage:
-  - _index: 0
-    type: {fileID: 11400000, guid: e98ad438bdcc0304192b39116293624c, type: 2}
+  - _index: 1
+    type: {fileID: 11400000, guid: 222d9ac3d4ae95bb69e763bbdcbb4c88, type: 2}
     min: 2
     max: 4
   criticalChance: 0.05

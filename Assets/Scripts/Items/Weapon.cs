@@ -12,14 +12,14 @@ namespace Items
         [SerializeField] private List<DamageStat> damage;
         [SerializeField] private float criticalChance = 0.05f;
         [SerializeField] private float attackSpeed = 1f;
-
-        [SerializeField] private List<WeaponComponent> components;
+        [SerializeField] private ItemComponent handle;
+        [SerializeField] private List<ItemComponent> components;
 
         public int HandsNeeded => handsNeeded;
         public List<DamageStat> Damage => damage;
         public float CriticalChance => criticalChance;
         public float AttackSpeed => attackSpeed;
-        public List<WeaponComponent> Components => components;
+        public List<ItemComponent> Components => components;
 
         public Statistics Statistics
         {

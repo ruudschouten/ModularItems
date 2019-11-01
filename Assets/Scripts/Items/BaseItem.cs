@@ -1,6 +1,4 @@
-﻿using ScriptableObjects;
-using ScriptableObjects.DropDown;
-using ScriptableObjects.Types;
+﻿using ScriptableObjects.Types;
 using Stats;
 using UnityEngine;
 
