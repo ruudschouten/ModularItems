@@ -79,7 +79,7 @@ PrefabInstance:
     - target: {fileID: 1753498943290273225, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
         type: 3}
       propertyPath: m_Name
-      value: Short Club Variant
+      value: Stick Handle Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1753498943290273207, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
         type: 3}
@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
         type: 3}
       propertyPath: name
-      value: Short Club
+      value: Stick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9, type: 3}
