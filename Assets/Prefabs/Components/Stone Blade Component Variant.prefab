@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: m_Name
-      value: Stone Blade Component
+      value: Stone Blade Component Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8053860632355177342, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
@@ -155,6 +155,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053860632355177343, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: name
+      value: Stone Blade
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: name
+      value: Stone Blade
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fc764c580956368eb5100bcf370223e, type: 3}

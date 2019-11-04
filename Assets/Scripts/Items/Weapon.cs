@@ -13,25 +13,21 @@ namespace Items
         [SerializeField] private float criticalChance = 0.05f;
         [SerializeField] private float attackSpeed = 1f;
         [SerializeField] private ItemComponent handle;
-        [SerializeField] private List<ItemComponent> components;
 
         public int HandsNeeded => handsNeeded;
         public List<DamageStat> Damage => damage;
         public float CriticalChance => criticalChance;
         public float AttackSpeed => attackSpeed;
-        public List<ItemComponent> Components => components;
 
         public Statistics Statistics
         {
             get
             {
                 if (_statistics != null) return _statistics;
-                
+
                 _statistics = new Statistics();
-                
-                if (components.Count == 0) return _statistics;
-                
-                foreach (var modifier in components.SelectMany(comp => comp.Modifiers))
+
+                foreach (var modifier in Components.SelectMany(comp => comp.Modifiers))
                 {
                     _statistics += modifier.Statistics;
                 }
@@ -40,7 +36,31 @@ namespace Items
             }
         }
 
+        public IEnumerable<ItemComponent> Components
+        {
+            get
+            {
+                if (_components != null && !handle.Changed) return _components;
+
+                _components = new List<ItemComponent>
+                {
+                    handle
+                };
+
+                foreach (var connector in handle.Connectors)
+                {
+                    _components.Add(connector.Component);
+                }
+
+                handle.Changed = false;
+
+                return _components;
+            }
+        }
+
         // This is a combination of the Components' stats
         private Statistics _statistics;
+
+        private List<ItemComponent> _components;
     }
 }

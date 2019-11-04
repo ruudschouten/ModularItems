@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a113e71ac4d45c69d1666194863139f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedTo: {fileID: 0}
-  position:
+  component: {fileID: 0}
+  applyablePosition:
     type: {fileID: 11400000, guid: 158764096b01c28c780ab76f96fd2f5c, type: 2}
     index: 1
 --- !u!1 &8053860631334539800
@@ -120,10 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a113e71ac4d45c69d1666194863139f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedTo: {fileID: 0}
-  position:
+  component: {fileID: 0}
+  applyablePosition:
     type: {fileID: 11400000, guid: 50a05904bd35c70689f70e89e7bc2364, type: 2}
-    index: 3
+    index: 0
 --- !u!1 &8053860631632390642
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,9 +165,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8053860632355177342}
-  - component: {fileID: 8053860632355177343}
+  - component: {fileID: 152153560491424081}
   m_Layer: 0
-  m_Name: WeaponComponent
+  m_Name: _Base Weapon Component
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,7 +189,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8053860632355177343
+--- !u!114 &152153560491424081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8053860632355177337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d68feb1121803619cfc51575bcf6c3, type: 3}
+  m_Script: {fileID: 11500000, guid: a40e249610fa3f6469e5419f324b1ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
@@ -212,9 +212,8 @@ MonoBehaviour:
     dexterity: 0
     intelligence: 0
   modifiers: []
+  anchor: {fileID: 0}
   connectors:
   - {fileID: 8053860631334539806}
   - {fileID: 8053860631189043457}
-  baseConnector: {fileID: 0}
-  allowedPositions:
-  - {fileID: 11400000, guid: 58b77d32d37ee35e193608a07850ccc8, type: 2}
+  preferredPosition: []

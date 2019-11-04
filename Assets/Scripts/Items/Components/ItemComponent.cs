@@ -7,12 +7,20 @@ namespace Items.Components
 {
     public class ItemComponent : ModifiableItem
     {
-        [SerializeField] private ItemComponent anchor;
         [SerializeField] private List<Connector> connectors;
         [SerializeField] private List<ConnectorPosition> preferredPosition;
 
         public List<ConnectorPosition> PreferredPosition => preferredPosition;
-        
+        public List<Connector> Connectors => connectors;
+
+        // Used primarily to let the Weapon know a component has been added to it, and its Components have changed 
+        public bool Changed
+        {
+            get => _changed;
+            set => _changed = value;
+        }
+
+        private bool _changed;
         private int _usedConnectors;
 
         public bool HasConnectors()
@@ -33,9 +41,8 @@ namespace Items.Components
         public Connector GetAvailableConnector(List<ConnectorPosition> positions)
         {
             return (from connector in connectors 
-                from applyablePosition in connector.ApplyablePositions 
                 from position in positions 
-                where applyablePosition == position 
+                where connector.ApplyablePosition == position 
                 select connector).FirstOrDefault();
         }
 
@@ -55,6 +62,7 @@ namespace Items.Components
             availableConnector.Connect(component);
             
             _usedConnectors++;
+            _changed = true;
             return true;
         }
     }

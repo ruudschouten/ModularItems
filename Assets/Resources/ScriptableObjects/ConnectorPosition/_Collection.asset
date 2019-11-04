@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: _Collection
   m_EditorClassIdentifier: Assembly-CSharp:ScriptableObjects.Types:ConnectorPositionCollection
   entries:
-  - {fileID: 11400000, guid: 58b77d32d37ee35e193608a07850ccc8, type: 2}
+  - {fileID: 11400000, guid: 50a05904bd35c70689f70e89e7bc2364, type: 2}
   - {fileID: 11400000, guid: 158764096b01c28c780ab76f96fd2f5c, type: 2}
   - {fileID: 11400000, guid: 21b65e969ba773201bbb62d974c42929, type: 2}
-  - {fileID: 11400000, guid: 50a05904bd35c70689f70e89e7bc2364, type: 2}
+  - {fileID: 11400000, guid: 58b77d32d37ee35e193608a07850ccc8, type: 2}
+  - {fileID: 11400000, guid: a23e194517c34f94ead957c1e1ece384, type: 2}
+  - {fileID: 11400000, guid: 95207a58ac3b16c4a9664ce982476538, type: 2}

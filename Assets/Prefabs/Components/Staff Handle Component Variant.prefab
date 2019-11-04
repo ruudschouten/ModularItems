@@ -92,6 +92,11 @@ PrefabInstance:
       propertyPath: name
       value: Staff
       objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: name
+      value: Staff
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fc764c580956368eb5100bcf370223e, type: 3}
 --- !u!4 &8508316349517534177 stripped

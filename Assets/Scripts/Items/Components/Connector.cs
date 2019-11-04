@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using ScriptableObjects.Types;
 using UnityEngine;
 
@@ -5,15 +6,23 @@ namespace Items.Components
 {
     public class Connector : MonoBehaviour
     {
-        [SerializeField] private Connector connectedTo;
-        [SerializeField] private ConnectorPositionDropdown position;
+        [SerializeField] private ItemComponent component;
+        [SerializeField] private ConnectorPositionDropdown applyablePosition;
 
-        public Connector ConnectedTo
+        public ItemComponent Component
         {
-            get => connectedTo;
-            set => connectedTo = value;
+            get => component; 
+            set => component = value;
         }
 
-        public ConnectorPosition Position => position.Type;
+        public ConnectorPosition ApplyablePosition => applyablePosition.Type;
+
+        public void Connect(ItemComponent comp)
+        {
+            Component = comp;
+            comp.transform.position = transform.position;
+            comp.transform.SetParent(transform);
+            comp.transform.rotation = Quaternion.identity;
+        }
     }
 }
