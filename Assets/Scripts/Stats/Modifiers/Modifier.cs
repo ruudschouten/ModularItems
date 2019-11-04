@@ -2,7 +2,7 @@ using Stats;
 using Stats.Modifiers;
 using UnityEngine;
 
-public abstract class BaseItemModifier : MonoBehaviour
+public abstract class Modifier : MonoBehaviour
 {
     [SerializeField] private new string name;
     [SerializeField] private int requiredItemLevel;
