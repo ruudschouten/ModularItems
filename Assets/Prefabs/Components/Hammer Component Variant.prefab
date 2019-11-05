@@ -19,6 +19,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
+      propertyPath: damage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
       propertyPath: name
       value: Hammer
       objectReference: {fileID: 0}
@@ -56,6 +61,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 95207a58ac3b16c4a9664ce982476538,
         type: 2}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0]._index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].type
+      value: 
+      objectReference: {fileID: 11400000, guid: 222d9ac3d4ae95bb69e763bbdcbb4c88,
+        type: 2}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].min
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].max
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8053860632355177342, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: m_LocalPosition.x

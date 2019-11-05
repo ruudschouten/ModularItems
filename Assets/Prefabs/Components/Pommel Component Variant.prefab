@@ -101,6 +101,48 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pommel Component Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: preferredPosition.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: name
+      value: Pommel
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: preferredPosition.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 158764096b01c28c780ab76f96fd2f5c,
+        type: 2}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0]._index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].type
+      value: 
+      objectReference: {fileID: 11400000, guid: 222d9ac3d4ae95bb69e763bbdcbb4c88,
+        type: 2}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].min
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].max
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8053860632355177342, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -156,22 +198,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: preferredPosition.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: name
-      value: Pommel
-      objectReference: {fileID: 0}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: preferredPosition.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 158764096b01c28c780ab76f96fd2f5c,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fc764c580956368eb5100bcf370223e, type: 3}
 --- !u!4 &2859583888682851785 stripped

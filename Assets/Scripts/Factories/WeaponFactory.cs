@@ -41,6 +41,7 @@ namespace Factories
 
                 weapon.Handle.AddComponent(component);
             }
+            weapon.CalculateStats();
         }
     }
 }

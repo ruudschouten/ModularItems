@@ -1,14 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ScriptableObjects.Types;
+using Stats;
 using UnityEngine;
 
 namespace Items.Components
 {
     public class ItemComponent : ModifiableItem
     {
+        [SerializeField] private List<DamageStat> damage;
         [SerializeField] private List<Connector> connectors;
         [SerializeField] private List<ConnectorPosition> preferredPosition;
+
+        public List<DamageStat> Damage => damage;
 
         public List<ConnectorPosition> PreferredPosition => preferredPosition;
         public List<Connector> Connectors => connectors;

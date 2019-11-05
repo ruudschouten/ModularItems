@@ -200,6 +200,62 @@ PrefabInstance:
       propertyPath: m_Name
       value: Branch Handle Component Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: connectors.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: name
+      value: Staff
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: connectors.Array.data[0]
+      value: 
+      objectReference: {fileID: 8697429239442984935}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: connectors.Array.data[1]
+      value: 
+      objectReference: {fileID: 7248566839003364878}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: connectors.Array.data[2]
+      value: 
+      objectReference: {fileID: 4133755540420042053}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: connectors.Array.data[3]
+      value: 
+      objectReference: {fileID: 2028534070370040175}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0]._index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].type
+      value: 
+      objectReference: {fileID: 11400000, guid: 222d9ac3d4ae95bb69e763bbdcbb4c88,
+        type: 2}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].min
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].max
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8053860632355177342, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,6 +311,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8053860631632390643, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053860631632390643, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053860631632390643, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053860632355177343, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: name
+      value: Staff
+      objectReference: {fileID: 0}
     - target: {fileID: 8053860631334539801, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -275,56 +351,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.015
       objectReference: {fileID: 0}
-    - target: {fileID: 8053860632355177343, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: name
-      value: Staff
-      objectReference: {fileID: 0}
-    - target: {fileID: 8053860631632390643, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8053860631632390643, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8053860631632390643, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: connectors.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: name
-      value: Staff
-      objectReference: {fileID: 0}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: connectors.Array.data[0]
-      value: 
-      objectReference: {fileID: 8697429239442984935}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: connectors.Array.data[1]
-      value: 
-      objectReference: {fileID: 7248566839003364878}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: connectors.Array.data[2]
-      value: 
-      objectReference: {fileID: 4133755540420042053}
-    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: connectors.Array.data[3]
-      value: 
-      objectReference: {fileID: 2028534070370040175}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fc764c580956368eb5100bcf370223e, type: 3}
 --- !u!4 &8508316349517534177 stripped

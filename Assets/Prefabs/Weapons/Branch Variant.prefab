@@ -91,7 +91,42 @@ PrefabInstance:
     - target: {fileID: 1753498943290273225, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
         type: 3}
       propertyPath: m_Name
-      value: Staff Variant
+      value: Branch Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
+        type: 3}
+      propertyPath: handsNeeded
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
+        type: 3}
+      propertyPath: damage.Array.data[0].min
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
+        type: 3}
+      propertyPath: damage.Array.data[0].max
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
+        type: 3}
+      propertyPath: name
+      value: Branch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
+        type: 3}
+      propertyPath: requirements.strength
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
+        type: 3}
+      propertyPath: handle
+      value: 
+      objectReference: {fileID: 3565269715508065601}
+    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 1753498943290273207, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
         type: 3}
@@ -148,36 +183,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
-        type: 3}
-      propertyPath: handsNeeded
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
-        type: 3}
-      propertyPath: damage.Array.data[0].min
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
-        type: 3}
-      propertyPath: damage.Array.data[0].max
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
-        type: 3}
-      propertyPath: name
-      value: Branch
-      objectReference: {fileID: 0}
-    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
-        type: 3}
-      propertyPath: requirements.strength
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1753498943290273206, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9,
-        type: 3}
-      propertyPath: handle
-      value: 
-      objectReference: {fileID: 3565269715508065601}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b87d8f46dac220bea3c05fcc8b9e1a9, type: 3}
 --- !u!4 &2474325426636294039 stripped
