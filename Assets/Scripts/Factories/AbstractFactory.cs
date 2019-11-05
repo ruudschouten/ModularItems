@@ -26,5 +26,13 @@ namespace Factories
         {
             return Random.NextInt(min, collection.Count);
         }
+
+        protected void Cleanup(Transform container)
+        {
+            foreach (Transform child in container)
+            {
+                Destroy(child.gameObject);
+            }
+        }
     }
 }

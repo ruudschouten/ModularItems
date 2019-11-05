@@ -19,7 +19,6 @@ namespace Items.Components
         public void Connect(ItemComponent comp)
         {
             comp.transform.SetParent(transform, false);
-//            comp.transform.position = transform.position;
             comp.transform.rotation = new Quaternion();
             
             Component = comp;

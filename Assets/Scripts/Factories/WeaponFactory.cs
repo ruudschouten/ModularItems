@@ -1,4 +1,5 @@
 using Items;
+using NaughtyAttributes;
 using ScriptableObjects.Collections;
 using UnityEngine;
 
@@ -10,23 +11,14 @@ namespace Factories
         [SerializeField] private WeaponCollection weaponCollection;
         [SerializeField] private ComponentFactory componentFactory;
 
-        [SerializeField] private bool generateOnAwake;
-
         public WeaponCollection WeaponCollection => weaponCollection;
         public ComponentFactory ComponentFactory => componentFactory;
 
-        protected override void Awake()
-        {
-            base.Awake();
-
-            if (generateOnAwake)
-            {
-                Create();
-            }
-        }
-        
+        [Button("Generate")]
         public override Weapon Create()
         {
+            Cleanup(weaponContainer);
+            
             // Select random weapon from collection
             var index = GetRandomInRangeOfCollection(weaponCollection.Weapons);
             var weapon = Instantiate(WeaponCollection.Weapons[index], weaponContainer);
