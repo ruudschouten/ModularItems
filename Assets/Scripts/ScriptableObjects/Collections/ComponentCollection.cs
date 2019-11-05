@@ -7,13 +7,8 @@ namespace ScriptableObjects.Collections
     [CreateAssetMenu(fileName = "_Collection", menuName = "Modular Items/Collections/Components")]
     public class ComponentCollection : ScriptableObject
     {
-        [SerializeField] private List<ItemComponent> component;
+        [SerializeField] private List<ItemComponent> components;
 
-        public List<ItemComponent> Component => component;
-
-        public ItemComponent GetComponent()
-        {
-            return null;
-        }
+        public List<ItemComponent> Components => components;
     }
 }

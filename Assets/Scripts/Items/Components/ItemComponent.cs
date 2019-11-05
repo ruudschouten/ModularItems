@@ -20,8 +20,32 @@ namespace Items.Components
             set => _changed = value;
         }
 
+        public List<Connector> FreeConnectors
+        {
+            get
+            {
+                if (_freeConnectors != null && !_changed)
+                {
+                    return _freeConnectors;
+                }
+                
+                _freeConnectors = new List<Connector>();
+
+                foreach (var connector in Connectors)
+                {
+                    if (_usedPositions.Contains(connector.ApplyablePosition)) continue;
+                    
+                    _freeConnectors.Add(connector);
+                }
+
+                return _freeConnectors;
+            }
+        } 
+
         private bool _changed;
         private int _usedConnectors;
+        private List<ConnectorPosition> _usedPositions = new List<ConnectorPosition>();
+        private List<Connector> _freeConnectors;
 
         public bool HasConnectors()
         {
@@ -33,37 +57,42 @@ namespace Items.Components
             return connectors.Count > _usedConnectors;
         }
 
-        public bool HitMaxConnectors()
-        {
-            return Rarity.MaxConnectors < connectors.Count;
-        }
-
         public Connector GetAvailableConnector(List<ConnectorPosition> positions)
         {
-            return (from connector in connectors 
+            return (from connector in FreeConnectors 
                 from position in positions 
                 where connector.ApplyablePosition == position 
                 select connector).FirstOrDefault();
         }
 
+        public bool CanAddComponent()
+        {
+            if (!HasConnectors()) return false;
+            if (!ConnectorsLeft()) return false;
+            
+            return true;
+        }
+        
         /// <summary>
         /// Adds <paramref name="component"/> to this item if it has connectors left and if the preferred position is found.
         /// </summary>
         /// <param name="component">Component to add</param>
         /// <returns></returns>
-        public bool AddComponent(ItemComponent component)
+        public void AddComponent(ItemComponent component)
         {
-            if (!HasConnectors()) return false;
-            if (!ConnectorsLeft()) return false;
-            if (HitMaxConnectors()) return false;
             var availableConnector = GetAvailableConnector(component.PreferredPosition);
-            if (availableConnector == null) return false;
+            
+            if (availableConnector == null)
+            {
+                // Couldn't fit component on preferred position, add it somewhere else
+                availableConnector = connectors.First(x => x.Component == null);
+            }
 
             availableConnector.Connect(component);
             
             _usedConnectors++;
+            _usedPositions.Add(availableConnector.ApplyablePosition);
             _changed = true;
-            return true;
         }
     }
 }

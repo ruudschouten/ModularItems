@@ -7,13 +7,8 @@ namespace ScriptableObjects.Collections
     [CreateAssetMenu(fileName = "_Collection", menuName = "Modular Items/Collections/Weapons")]
     public class WeaponCollection : ScriptableObject
     {
-        [SerializeField] private List<Weapon> weapon;
+        [SerializeField] private List<Weapon> weapons;
 
-        public List<Weapon> Weapon => weapon;
-
-        public Weapon GetBaseWeapon()
-        {
-            return null;
-        }
+        public List<Weapon> Weapons => weapons;
     }
 }

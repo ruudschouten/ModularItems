@@ -18,6 +18,7 @@ namespace Items
         public List<DamageStat> Damage => damage;
         public float CriticalChance => criticalChance;
         public float AttackSpeed => attackSpeed;
+        public ItemComponent Handle => handle;
 
         public Statistics Statistics
         {
@@ -36,7 +37,7 @@ namespace Items
             }
         }
 
-        public IEnumerable<ItemComponent> Components
+        public List<ItemComponent> Components
         {
             get
             {
@@ -57,6 +58,8 @@ namespace Items
                 return _components;
             }
         }
+
+        public List<Connector> Connectors => handle.Connectors;
 
         // This is a combination of the Components' stats
         private Statistics _statistics;

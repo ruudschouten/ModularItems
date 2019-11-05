@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using ScriptableObjects.Types;
 using UnityEngine;
 
@@ -19,10 +18,11 @@ namespace Items.Components
 
         public void Connect(ItemComponent comp)
         {
+            comp.transform.SetParent(transform, false);
+//            comp.transform.position = transform.position;
+            comp.transform.rotation = new Quaternion();
+            
             Component = comp;
-            comp.transform.position = transform.position;
-            comp.transform.SetParent(transform);
-            comp.transform.rotation = Quaternion.identity;
         }
     }
 }
