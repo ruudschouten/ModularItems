@@ -29,9 +29,15 @@ namespace Items
 
                 _statistics = new Statistics();
 
-                foreach (var modifier in Components.SelectMany(comp => comp.Modifiers))
+                foreach (var comp in Components)
                 {
-                    _statistics += modifier.Statistics;
+                    foreach (var modifier in comp.Modifiers)
+                    {
+                        if (modifier == null) continue;
+                        if (modifier.Statistics == null) continue;
+                        
+                        _statistics += modifier.Statistics;
+                    } 
                 }
 
                 return _statistics;
