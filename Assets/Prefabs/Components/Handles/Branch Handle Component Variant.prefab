@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4483807585865887203}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 5.05, z: -0.05}
+  m_LocalPosition: {x: 0, y: 3.65, z: -0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8508316350450833634}
@@ -72,7 +72,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4551075116122999913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.05, z: 0.113}
+  m_LocalPosition: {x: 0, y: 3.65, z: 0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8508316350450833634}
@@ -166,7 +166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8128675571319237309}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 5.35, z: 0.02}
+  m_LocalPosition: {x: -0.02, y: 4, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8508316350450833634}
@@ -195,11 +195,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: m_Name
-      value: Branch Handle Component Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: connectors.Array.size
@@ -255,6 +250,11 @@ PrefabInstance:
         type: 3}
       propertyPath: damage.Array.data[0].max
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: m_Name
+      value: Branch Handle Component Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8053860632355177342, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
@@ -372,11 +372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8508316349517534177}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 7bd74d68de6be28b2a91a6c0028cc7ee,
-        type: 3}
-      propertyPath: m_Name
-      value: branch handle
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7bd74d68de6be28b2a91a6c0028cc7ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -435,17 +430,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7bd74d68de6be28b2a91a6c0028cc7ee,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7bd74d68de6be28b2a91a6c0028cc7ee,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7bd74d68de6be28b2a91a6c0028cc7ee,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7bd74d68de6be28b2a91a6c0028cc7ee,
+        type: 3}
+      propertyPath: m_Name
+      value: branch handle
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 7bd74d68de6be28b2a91a6c0028cc7ee,
         type: 3}
