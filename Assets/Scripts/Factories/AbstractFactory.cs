@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = Unity.Mathematics.Random;
@@ -10,7 +11,10 @@ namespace Factories
 
         protected Random Random;
 
-        public abstract T Create();
+        public virtual T Create()
+        {
+            throw new NotImplementedException();
+        }
 
         protected virtual void Awake()
         {
@@ -22,7 +26,7 @@ namespace Factories
             Random = new Random(seed);
         }
 
-        protected int GetRandomInRangeOfCollection(List<T> collection, int min = 0)
+        protected int GetRandomInRangeOfCollection<T>(List<T> collection, int min = 0)
         {
             return Random.NextInt(min, collection.Count);
         }
