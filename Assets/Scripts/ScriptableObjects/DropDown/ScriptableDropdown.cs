@@ -10,7 +10,16 @@ namespace ScriptableObjects.DropDown
         [SerializeField] private T type;
         [SerializeField] private int index;
 
-        public T Type => type;
-        protected int Index => index;
+        public T Type
+        {
+            get => type;
+            set => type = value;
+        }
+
+        public int Index
+        {
+            get => index;
+            set => index = value;
+        }
     }
 }
