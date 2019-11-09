@@ -1,4 +1,5 @@
 using Items;
+using Items.Components;
 using NaughtyAttributes;
 using ScriptableObjects.Collections;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Factories
     {
         [SerializeField] protected Transform weaponContainer;
         [SerializeField] private WeaponCollection weaponCollection;
+        [SerializeField] private RarityFactory rarityFactory;
         [SerializeField] private ComponentFactory componentFactory;
 
         public WeaponCollection WeaponCollection => weaponCollection;
@@ -23,25 +25,28 @@ namespace Factories
             var index = GetRandomInRangeOfCollection(weaponCollection.Weapons);
             var weapon = Instantiate(WeaponCollection.Weapons[index], weaponContainer);
 
+            weapon.Handle.SetRarity(rarityFactory.GetIndex());
+            
             // Add component slots
-            AddComponents(weapon);
+            AddComponents(weapon.Handle);
+            
+            weapon.CalculateStats();
 
             return weapon;
         }
 
-        private void AddComponents(Weapon weapon)
+        private void AddComponents(ItemComponent handle)
         {
-            var componentsToAdd = Random.NextInt(1, weapon.Connectors.Count);
+            var componentsToAdd = Random.NextInt(1, handle.Connectors.Count);
 
             for (var i = 0; i < componentsToAdd; i++)
             {
-                if (!weapon.Handle.CanAddComponent()) break;
+                if (!handle.CanAddComponent()) break;
                 
                 var component = ComponentFactory.Create();
 
-                weapon.Handle.AddComponent(component);
+                handle.AddComponent(component);
             }
-            weapon.CalculateStats();
         }
     }
 }
