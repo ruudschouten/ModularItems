@@ -10,6 +10,7 @@ namespace Items
         [SerializeField] private int quality;
         [SerializeField] private ItemRarityDropdown rarity;
         [SerializeField] private Requirements requirements;
+        [SerializeField] private int itemLevel;
 
         public string Name
         {
@@ -23,7 +24,22 @@ namespace Items
             set => quality = value;
         }
         
-        public ItemRarity Rarity => rarity.Type;
+        public ItemRarity GetRarity()
+        {
+            return rarity.Type;
+        }
+
+        public void SetRarity(int index)
+        {
+            rarity.Index = index;
+        }
+
+        public int ItemLevel
+        {
+            get => itemLevel;
+            set => itemLevel = value;
+        }
+
         public Requirements Requirements => requirements;
     }
 }
