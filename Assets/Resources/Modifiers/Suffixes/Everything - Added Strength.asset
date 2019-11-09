@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc46a61ece73474a9d99f43f934e0aac, type: 3}
+  m_Name: Everything - Added Strength
+  m_EditorClassIdentifier: 
+  type: 1
+  domain: -1
+  tieredModifiers:
+    m_keys: 0a00000009000000
+    m_values:
+    - {fileID: 1875082242330265488, guid: f9561424717266ccab6f089895db4978, type: 3}
+    - {fileID: 7313144589232635132, guid: 7846363eade643037813b34e5c3d408d, type: 3}

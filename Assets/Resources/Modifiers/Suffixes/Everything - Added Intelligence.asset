@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc46a61ece73474a9d99f43f934e0aac, type: 3}
+  m_Name: Everything - Added Intelligence
+  m_EditorClassIdentifier: 
+  type: 1
+  domain: -1
+  tieredModifiers:
+    m_keys: 09000000
+    m_values:
+    - {fileID: 8645683730885462879, guid: c7317826ccf66eeb9933596b14a382e1, type: 3}

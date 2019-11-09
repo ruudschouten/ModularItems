@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 815b0e5756964c87bf72e6201ff20d0d, type: 3}
   m_Name: Modifier Groups
   m_EditorClassIdentifier: 
-  modifierGroups: []
+  modifierGroups:
+  - {fileID: 11400000, guid: a63ff2096b67b652db48ecbf4db4157e, type: 2}
+  - {fileID: 11400000, guid: b47239207e4674741bed0254f4afd273, type: 2}
+  - {fileID: 11400000, guid: 113b41fbdc08dc90ba49b03cbe6a3806, type: 2}
+  - {fileID: 11400000, guid: a7f40d5e9f7af5357981a15bfd59e4b0, type: 2}
