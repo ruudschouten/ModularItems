@@ -11,12 +11,14 @@ namespace ScriptableObjects.Types
         [SerializeField] private new string name;
         [SerializeField] private Color colour;
         [SerializeField] private int maxModifiers;
-        [SerializeField] private int maxConnectors;
+        [SerializeField] private int maxPrefixes;
+        [SerializeField] private int maxSuffixes;
 
         public string Name => name;
         public Color Colour => colour;
         public int MaxModifiers => maxModifiers;
-        public int MaxConnectors => maxConnectors;
+        public int MaxPrefixes => maxPrefixes;
+        public int MaxSuffixes => maxSuffixes;
     }
     
     [Serializable]
