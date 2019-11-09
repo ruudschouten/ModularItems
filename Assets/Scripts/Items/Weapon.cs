@@ -31,7 +31,7 @@ namespace Items
 
                 foreach (var comp in Components)
                 {
-                    foreach (var modifier in comp.Modifiers)
+                    foreach (var modifier in comp.Modifiers.All)
                     {
                         if (modifier == null) continue;
                         if (modifier.Statistics == null) continue;
