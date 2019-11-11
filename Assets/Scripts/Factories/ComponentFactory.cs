@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Items;
 using Items.Components;
 using ScriptableObjects.Collections;
@@ -13,11 +14,22 @@ namespace Factories
         
         public override ItemComponent Create()
         {
-            var index = GetRandomInRangeOfCollection(componentCollection.Components);
-            var component = Instantiate(componentCollection.Components[index]);
+            return GetFromCollection(componentCollection.Components);
+        }
 
-            component.SetRarity(rarityFactory.GetRarity());
+        public ItemComponent CreateWithItemLevel(int itemLevel)
+        {
+            var components = componentCollection.GetWithinItemLevel(itemLevel);
+            return GetFromCollection(components);
+        }
 
+        private ItemComponent GetFromCollection(List<ItemComponent> components)
+        {
+            var index = GetRandomInRangeOfCollection(components);
+            var component = Instantiate(components[index]);
+            
+            component.SetRarity(rarityFactory.Create());
+            
             modifierFactory.ApplyModifiers(component);
 
             return component;

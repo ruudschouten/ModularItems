@@ -26,7 +26,7 @@ namespace Factories
             _selector.Build((int) seed);
         }
         
-        public ItemRarity GetRarity()
+        public override ItemRarity Create()
         {
             return _selector.SelectRandomItem();;
         }
