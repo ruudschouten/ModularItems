@@ -1,4 +1,5 @@
 using Items;
+using Items.Components;
 using NaughtyAttributes;
 using ScriptableObjects.Collections;
 using UnityEngine;
@@ -9,39 +10,60 @@ namespace Factories
     {
         [SerializeField] protected Transform weaponContainer;
         [SerializeField] private WeaponCollection weaponCollection;
+        [SerializeField] private RarityFactory rarityFactory;
         [SerializeField] private ComponentFactory componentFactory;
-
-        public WeaponCollection WeaponCollection => weaponCollection;
-        public ComponentFactory ComponentFactory => componentFactory;
+        [SerializeField] private ModifierFactory modifierFactory;
 
         [Button("Generate")]
         public override Weapon Create()
         {
-            Cleanup(weaponContainer);
-            
-            // Select random weapon from collection
-            var index = GetRandomInRangeOfCollection(weaponCollection.Weapons);
-            var weapon = Instantiate(WeaponCollection.Weapons[index], weaponContainer);
-
+            var weapon = GetFromCollection();
             // Add component slots
-            AddComponents(weapon);
+            AddComponents(weapon.Handle);
+
+            weapon.CalculateStats();
 
             return weapon;
         }
 
-        private void AddComponents(Weapon weapon)
+        public Weapon CreateWithMonsterLevel(int monsterLevel)
         {
-            var componentsToAdd = Random.NextInt(1, weapon.Connectors.Count);
+            var weapon = GetFromCollection();
+
+            AddComponents(weapon.Handle, monsterLevel);
+            
+            weapon.CalculateStats();
+
+            return weapon;
+        }
+
+        private Weapon GetFromCollection()
+        {
+            Cleanup(weaponContainer);
+
+            // Select random weapon from collection
+            var index = GetRandomInRangeOfCollection(weaponCollection.Weapons);
+            var weapon = Instantiate(weaponCollection.Weapons[index], weaponContainer);
+
+            weapon.Handle.SetRarity(rarityFactory.Create());
+
+            modifierFactory.ApplyModifiers(weapon.Handle);
+
+            return weapon;
+        }
+
+        private void AddComponents(ItemComponent handle, int level = -1)
+        {
+            var componentsToAdd = Random.NextInt(1, handle.Connectors.Count);
 
             for (var i = 0; i < componentsToAdd; i++)
             {
-                if (!weapon.Handle.CanAddComponent()) break;
-                
-                var component = ComponentFactory.Create();
+                if (!handle.CanAddComponent()) break;
 
-                weapon.Handle.AddComponent(component);
+                var component = level < 0 ? componentFactory.Create() : componentFactory.CreateWithItemLevel(level);
+
+                handle.AddComponent(component);
             }
-            weapon.CalculateStats();
         }
     }
 }

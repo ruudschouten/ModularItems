@@ -31,7 +31,7 @@ namespace Items
 
                 foreach (var comp in Components)
                 {
-                    foreach (var modifier in comp.Modifiers)
+                    foreach (var modifier in comp.Modifiers.All)
                     {
                         if (modifier == null) continue;
                         if (modifier.Statistics == null) continue;
@@ -93,7 +93,11 @@ namespace Items
             }
         }
 
-        public List<Connector> Connectors => handle.Connectors;
+        public override int ItemLevel
+        {
+            // The highest level of any component
+            get { return Components.Max(x => x.ItemLevel); }
+        }
 
         // This is a combination of the Components' stats
         private Statistics _statistics;

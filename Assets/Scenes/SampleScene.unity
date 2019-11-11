@@ -121,53 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &362728068
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 362728069}
-  - component: {fileID: 362728070}
-  m_Layer: 0
-  m_Name: Component Factory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &362728069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362728068}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1373066227}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &362728070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362728068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57090a7feb3f4bed924e7dd414f54dab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seed: 0
-  componentCollection: {fileID: 11400000, guid: 30e2658afcbad334cb1ed52b6e0063bf,
-    type: 2}
-  modifierFactory: {fileID: 1480606376}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +335,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1373066227}
+  - component: {fileID: 1373066231}
+  - component: {fileID: 1373066230}
+  - component: {fileID: 1373066229}
+  - component: {fileID: 1373066228}
   m_Layer: 0
   m_Name: Factories
   m_TagString: Untagged
@@ -399,51 +356,17 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1979990685}
-  - {fileID: 362728069}
-  - {fileID: 1480606375}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1480606374
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1480606375}
-  - component: {fileID: 1480606376}
-  m_Layer: 0
-  m_Name: Modifier Factory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1480606375
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480606374}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1373066227}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1480606376
+--- !u!114 &1373066228
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480606374}
+  m_GameObject: {fileID: 1373066226}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54d2c0b7625f4b16b4b8baac470eae75, type: 3}
@@ -451,44 +374,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seed: 0
   modifierCollection: {fileID: 11400000, guid: 7f04a69a2fa97dd49aa18e3d54bd7096, type: 2}
---- !u!1 &1979990684
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1979990685}
-  - component: {fileID: 1979990686}
-  m_Layer: 0
-  m_Name: Weapon Factory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1979990685
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979990684}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1373066227}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1979990686
+--- !u!114 &1373066229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979990684}
+  m_GameObject: {fileID: 1373066226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdb308b954aac266aa83b295c38df68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 0
+  itemRarity:
+    m_keys:
+    - {fileID: 11400000, guid: 17a5fb61ffc9a736bb3da593424ada2f, type: 2}
+    - {fileID: 11400000, guid: cf8dc7741bef14e1bbb4bc232f1f6611, type: 2}
+    - {fileID: 11400000, guid: 1d46277a560490021ac95788fec9b654, type: 2}
+    m_values:
+    - 100
+    - 25
+    - 5
+--- !u!114 &1373066230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373066226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57090a7feb3f4bed924e7dd414f54dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 0
+  componentCollection: {fileID: 11400000, guid: 30e2658afcbad334cb1ed52b6e0063bf,
+    type: 2}
+  rarityFactory: {fileID: 1373066229}
+  modifierFactory: {fileID: 1373066228}
+--- !u!114 &1373066231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373066226}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97b8581b626744d3985040c1e72ac3cc, type: 3}
@@ -497,4 +428,6 @@ MonoBehaviour:
   seed: 0
   weaponContainer: {fileID: 1085175983}
   weaponCollection: {fileID: 11400000, guid: 0b688cd693c551344901fac0a12470b5, type: 2}
-  componentFactory: {fileID: 362728070}
+  rarityFactory: {fileID: 1373066229}
+  componentFactory: {fileID: 1373066230}
+  modifierFactory: {fileID: 1373066228}
