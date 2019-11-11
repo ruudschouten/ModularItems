@@ -35,7 +35,7 @@ namespace Items
             this.rarity.Type = rarity;
         }
 
-        public int ItemLevel
+        public virtual int ItemLevel
         {
             get => itemLevel;
             set => itemLevel = value;

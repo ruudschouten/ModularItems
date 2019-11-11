@@ -115,6 +115,13 @@ MonoBehaviour:
     strength: 0
     dexterity: 0
     intelligence: 0
-  modifiers: []
+  itemLevel: 1
+  hasImplicit: 0
+  modifiers:
+    implicit: {fileID: 0}
+    prefixes: []
+    suffixes: []
+  type: 0
+  damage: []
   connectors: []
   preferredPosition: []

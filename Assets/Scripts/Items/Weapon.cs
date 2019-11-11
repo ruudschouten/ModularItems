@@ -93,7 +93,11 @@ namespace Items
             }
         }
 
-        public List<Connector> Connectors => handle.Connectors;
+        public override int ItemLevel
+        {
+            // The highest level of any component
+            get { return Components.Max(x => x.ItemLevel); }
+        }
 
         // This is a combination of the Components' stats
         private Statistics _statistics;
