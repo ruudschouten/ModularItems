@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Common
   colour: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+  tier: 0
   maxModifiers: 0
+  maxPrefixes: 0
+  maxSuffixes: 0

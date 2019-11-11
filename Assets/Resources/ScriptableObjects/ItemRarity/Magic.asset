@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19091ff33b8400854b9b648578103b0c, type: 3}
   m_Name: Magic
   m_EditorClassIdentifier: 
-  edit: 0
   name: Magic
   colour: {r: 0.21782663, g: 0.4787272, b: 0.8396226, a: 1}
+  tier: 1
   maxModifiers: 2
+  maxPrefixes: 2
+  maxSuffixes: 2

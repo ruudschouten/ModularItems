@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rare
   colour: {r: 0.98039216, g: 0.78039217, b: 0.18039218, a: 1}
+  tier: 2
   maxModifiers: 6
+  maxPrefixes: 3
+  maxSuffixes: 3
