@@ -7,14 +7,16 @@ namespace Items
     public class ModifiableItem : BaseItem
     {
         [SerializeField] private bool hasImplicit;
-
         [SerializeField] private ModifierByType modifiers = new ModifierByType();
+        [SerializeField] private ItemType type;
 
         public ModifierByType Modifiers
         {
             get => modifiers;
             set => modifiers = value;
         }
+
+        public ItemType Type => type;
 
         public bool HasImplicit => hasImplicit;
 
@@ -29,6 +31,7 @@ namespace Items
                     Modifiers.AddSuffix(modifier);
                     break;
                 case ModifierType.Prefix:
+                    Modifiers.AddPrefix(modifier);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);

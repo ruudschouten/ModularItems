@@ -47,9 +47,24 @@ namespace Stats.Modifiers
                 case ModifierType.Implicit:
                     return Implicit == null;
                 case ModifierType.Suffix:
-                    return rarity.MaxSuffixes < Suffixes.Count;
+                    return rarity.MaxSuffixes > Suffixes.Count;
                 case ModifierType.Prefix:
-                    return rarity.MaxPrefixes < Prefixes.Count;
+                    return rarity.MaxPrefixes > Prefixes.Count;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+        }
+
+        public List<Modifier> GetByType(ModifierType type)
+        {
+            switch (type)
+            {
+                case ModifierType.Implicit:
+                    return new List<Modifier> { Implicit };
+                case ModifierType.Suffix:
+                    return Suffixes;
+                case ModifierType.Prefix:
+                    return Prefixes;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(type), type, null);
             }

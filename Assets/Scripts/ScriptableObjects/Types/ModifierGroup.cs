@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Items;
 using Stats.Modifiers;
 using UnityEngine;
 
@@ -13,8 +14,8 @@ namespace ScriptableObjects.Types
         [SerializeField] private ModifierTier tieredModifiers;
 
         public ModifierType Type => type;
-        public ModifierTier TieredModifiers => tieredModifiers;
         public ItemType Domain => domain;
+        public ModifierTier TieredModifiers => tieredModifiers;
 
         public ICollection<Modifier> Modifiers
         {
@@ -29,13 +30,6 @@ namespace ScriptableObjects.Types
             }
         }
 
-        public Modifier GetByTier(int tier)
-        {
-            if (!tieredModifiers.ContainsKey(tier)) return null;
-            
-            return tieredModifiers[tier];
-        }
-
         public List<Modifier> GetWithinItemLevel(int level)
         {
             if (Modifiers == null || Modifiers.Count == 0)
@@ -45,6 +39,22 @@ namespace ScriptableObjects.Types
             
             var modifiers = Modifiers.ToList().FindAll(x => x.RequiredItemLevel <= level);
             return modifiers;
+        }
+
+        public bool Contains(ModifiableItem item)
+        {
+            foreach (var modifier in item.Modifiers.GetByType(type))
+            {
+                foreach (var value in tieredModifiers.Values)
+                {
+                    if (modifier == value)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }

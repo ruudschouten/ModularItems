@@ -11,13 +11,13 @@ namespace Factories
     {
         [SerializeField] private ModifierCollection modifierCollection;
         
-        public ModifierByType Create(ModifiableItem item)
+        public void ApplyModifiers(ModifiableItem item)
         {
             var mods = new ModifierByType();
 
             if (item.GetRarity().MaxModifiers < 1)
             {
-                return mods;
+                return;
             }
 
             if (item.HasImplicit)
@@ -37,45 +37,51 @@ namespace Factories
                 {
                     if (mods.CanAdd(ModifierType.Prefix, item.GetRarity()))
                     {
-                        mods.AddPrefix(GetModifier(ModifierType.Prefix, item));
+                        var modifier = GetModifier(ModifierType.Prefix, item);
+                        item.AddModifier(modifier, ModifierType.Prefix);
                     }
                 }
                 else
                 {
                     if (mods.CanAdd(ModifierType.Suffix, item.GetRarity()))
                     {
-                        mods.AddSuffix(GetModifier(ModifierType.Suffix, item));
+                        var modifier = GetModifier(ModifierType.Suffix, item);
+                        item.AddModifier(modifier, ModifierType.Suffix);
                     }
                 }
             }
-
-            return mods;
         }
 
         public Modifier GetModifier(ModifierType type, ModifiableItem item)
         {
-            var groups = modifierCollection.ModifierGroups.FindAll(x => x.Type == type);
+            // Get all groups based on the modifier type and item type
+            var groups = modifierCollection.ModifierGroups.FindAll(x => x.Type == type && x.Domain.HasFlag(item.Type));
             
             if (groups == null)
             {
                 throw new NullReferenceException("Unable to find any ModifierGroups for type " + type);
             }
             
-            var groupIndex = GetRandomInRangeOfCollection(groups);
-            
-            var group = groups[groupIndex];
+            // Select a group from the ModifierGroups to choose a modifier from
+            var group = groups[GetRandomInRangeOfCollection(groups)];
 
+            // Check if the item already has a modifier from this group
+            if (group.Contains(item))
+            {
+                Debug.Log($"Modifier from {group.name} already existed on {item.Name}, skipping");
+                return null;
+            }
+            
             var modifiers = group.Modifiers.ToList();
 
             if (modifiers.Count == 0)
             {
+                Debug.Log("No modifiers found");
                 // No modifier could be found, so none will be added
                 return null;
             }
-            
-            var index = GetRandomInRangeOfCollection(modifiers);
 
-            return modifiers[index];
+            return modifiers[GetRandomInRangeOfCollection(modifiers)];
         }
     }
 }

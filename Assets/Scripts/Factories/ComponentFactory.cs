@@ -18,7 +18,7 @@ namespace Factories
 
             component.SetRarity(rarityFactory.GetRarity());
 
-            component.Modifiers = modifierFactory.Create(component);
+            modifierFactory.ApplyModifiers(component);
 
             return component;
         }

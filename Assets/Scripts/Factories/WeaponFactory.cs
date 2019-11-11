@@ -25,7 +25,7 @@ namespace Factories
 
             weapon.Handle.SetRarity(rarityFactory.GetRarity());
 
-            weapon.Handle.Modifiers = modifierFactory.Create(weapon.Handle);
+            modifierFactory.ApplyModifiers(weapon.Handle);
 
             // Add component slots
             AddComponents(weapon.Handle);
