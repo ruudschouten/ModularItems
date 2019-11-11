@@ -11,11 +11,14 @@ namespace Factories
     {
         [SerializeField] private ModifierCollection modifierCollection;
         
-        public ModifierCollection ModifierCollection => modifierCollection;
-
         public ModifierByType Create(ModifiableItem item)
         {
             var mods = new ModifierByType();
+
+            if (item.GetRarity().MaxModifiers < 1)
+            {
+                return mods;
+            }
 
             if (item.HasImplicit)
             {
@@ -29,7 +32,7 @@ namespace Factories
             
             for (var i = 0; i < item.GetRarity().MaxModifiers; i++)
             {
-                var rand = Random.NextInt(0, 1);
+                var rand = Random.NextInt(0, 2);
                 if (rand == 0)
                 {
                     if (mods.CanAdd(ModifierType.Prefix, item.GetRarity()))
@@ -52,29 +55,27 @@ namespace Factories
         public Modifier GetModifier(ModifierType type, ModifiableItem item)
         {
             var groups = modifierCollection.ModifierGroups.FindAll(x => x.Type == type);
-
-            var groupIndex = GetRandomInRangeOfCollection(groups);
-
+            
             if (groups == null)
             {
                 throw new NullReferenceException("Unable to find any ModifierGroups for type " + type);
             }
             
-            var group = groups[groupIndex];
+            var groupIndex = GetRandomInRangeOfCollection(groups);
             
-            Debug.Log($"{group}");
+            var group = groups[groupIndex];
 
-            var modifier = group.GetWithinItemLevel(item.ItemLevel);
+            var modifiers = group.Modifiers.ToList();
 
-            if (modifier == null || modifier.Count == 0)
+            if (modifiers.Count == 0)
             {
-                // Try again in a different group until a modifier is found.
+                // No modifier could be found, so none will be added
                 return null;
             }
             
-            var index = GetRandomInRangeOfCollection(group.Modifiers.ToList());
+            var index = GetRandomInRangeOfCollection(modifiers);
 
-            return group.Modifiers.ToList()[index];
+            return modifiers[index];
         }
     }
 }

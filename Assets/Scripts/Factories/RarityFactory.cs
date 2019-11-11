@@ -1,4 +1,5 @@
-﻿using DataStructures.RandomSelector;
+﻿using System.Linq;
+using DataStructures.RandomSelector;
 using ScriptableObjects.Types;
 using UnityEngine;
 
@@ -8,16 +9,16 @@ namespace Factories
     {
         [SerializeField] private ItemRarityWeights itemRarity;
 
-        private DynamicRandomSelector<int> _selector;
+        private DynamicRandomSelector<ItemRarity> _selector;
 
         private void Awake()
         {
-            _selector = new DynamicRandomSelector<int>();
+            _selector = new DynamicRandomSelector<ItemRarity>();
 
             var index = 0;
             foreach (var pair in itemRarity)
             {
-                _selector.Add(index, pair.Value);
+                _selector.Add(pair.Key, pair.Value);
                 
                 index++;
             }
@@ -25,9 +26,9 @@ namespace Factories
             _selector.Build((int) seed);
         }
         
-        public int GetIndex()
+        public ItemRarity GetRarity()
         {
-            return _selector.SelectRandomItem();
+            return _selector.SelectRandomItem();;
         }
     }
 }

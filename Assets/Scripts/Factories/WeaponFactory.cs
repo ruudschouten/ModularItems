@@ -12,24 +12,24 @@ namespace Factories
         [SerializeField] private WeaponCollection weaponCollection;
         [SerializeField] private RarityFactory rarityFactory;
         [SerializeField] private ComponentFactory componentFactory;
-
-        public WeaponCollection WeaponCollection => weaponCollection;
-        public ComponentFactory ComponentFactory => componentFactory;
+        [SerializeField] private ModifierFactory modifierFactory;
 
         [Button("Generate")]
         public override Weapon Create()
         {
             Cleanup(weaponContainer);
-            
+
             // Select random weapon from collection
             var index = GetRandomInRangeOfCollection(weaponCollection.Weapons);
-            var weapon = Instantiate(WeaponCollection.Weapons[index], weaponContainer);
+            var weapon = Instantiate(weaponCollection.Weapons[index], weaponContainer);
 
-            weapon.Handle.SetRarity(rarityFactory.GetIndex());
-            
+            weapon.Handle.SetRarity(rarityFactory.GetRarity());
+
+            weapon.Handle.Modifiers = modifierFactory.Create(weapon.Handle);
+
             // Add component slots
             AddComponents(weapon.Handle);
-            
+
             weapon.CalculateStats();
 
             return weapon;
@@ -42,8 +42,8 @@ namespace Factories
             for (var i = 0; i < componentsToAdd; i++)
             {
                 if (!handle.CanAddComponent()) break;
-                
-                var component = ComponentFactory.Create();
+
+                var component = componentFactory.Create();
 
                 handle.AddComponent(component);
             }

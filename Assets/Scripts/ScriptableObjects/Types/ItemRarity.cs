@@ -10,12 +10,19 @@ namespace ScriptableObjects.Types
     {
         [SerializeField] private new string name;
         [SerializeField] private Color colour;
+        [SerializeField] private int tier;
         [SerializeField] private int maxModifiers;
         [SerializeField] private int maxPrefixes;
         [SerializeField] private int maxSuffixes;
 
         public string Name => name;
         public Color Colour => colour;
+        public int Tier
+        {
+            get => tier;
+            set => tier = value;
+        }
+
         public int MaxModifiers => maxModifiers;
         public int MaxPrefixes => maxPrefixes;
         public int MaxSuffixes => maxSuffixes;
@@ -24,6 +31,11 @@ namespace ScriptableObjects.Types
     [Serializable]
     public class ItemRarityDropdown : ScriptableDropdown<ItemRarity>
     {
+        public override int Index
+        {
+            get => Type.Tier;
+            set => Type.Tier = value;
+        }
     }
     
     public class ItemRarityHelper : ScriptableObjectHelper<ItemRarity, ItemRarityCollection>

@@ -29,9 +29,10 @@ namespace Items
             return rarity.Type;
         }
 
-        public void SetRarity(int index)
+        public void SetRarity(ItemRarity rarity)
         {
-            rarity.Index = index;
+            this.rarity.Index = rarity.Tier;
+            this.rarity.Type = rarity;
         }
 
         public int ItemLevel

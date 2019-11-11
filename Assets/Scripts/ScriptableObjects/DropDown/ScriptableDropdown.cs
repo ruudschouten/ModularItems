@@ -16,7 +16,7 @@ namespace ScriptableObjects.DropDown
             set => type = value;
         }
 
-        public int Index
+        public virtual int Index
         {
             get => index;
             set => index = value;
