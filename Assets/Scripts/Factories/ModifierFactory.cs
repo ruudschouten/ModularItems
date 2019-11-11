@@ -71,8 +71,8 @@ namespace Factories
                 Debug.Log($"Modifier from {group.name} already existed on {item.Name}, skipping");
                 return null;
             }
-            
-            var modifiers = group.Modifiers.ToList();
+
+            var modifiers = group.GetWithinItemLevel(item.ItemLevel);
 
             if (modifiers.Count == 0)
             {
