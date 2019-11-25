@@ -20,5 +20,13 @@ namespace Stats
             get => evasionRating;
             set => evasionRating = value;
         }
+
+        public static Defensive operator +(Defensive a, Defensive b)
+        {
+            a.ArmourRating += b.ArmourRating;
+            a.EvasionRating += b.EvasionRating;
+
+            return a;
+        }
     }
 }

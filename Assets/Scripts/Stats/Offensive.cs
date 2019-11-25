@@ -34,5 +34,15 @@ namespace Stats
             get => globalDamageModifier;
             set => globalDamageModifier = value;
         }
+
+        public static Offensive operator +(Offensive a, Offensive b)
+        {
+            a.AttackSpeed += b.AttackSpeed;
+            a.ChanceToCrit += b.ChanceToCrit;
+            a.CritMultiplier += b.CritMultiplier;
+            a.GlobalDamageModifier += b.GlobalDamageModifier;
+
+            return a;
+        }
     }
 }

@@ -27,21 +27,14 @@ namespace Stats
             get => intelligence;
             set => intelligence = value;
         }
-        
-        public void Apply(Attributes other)
+
+        public static Attributes operator +(Attributes a, Attributes b)
         {
-            if (other.Strength != 0)
-            {
-                Strength += other.Strength;
-            }
-            if (other.Dexterity != 0)
-            {
-                Dexterity += other.Dexterity;
-            }
-            if (other.Intelligence > 0)
-            {
-                Intelligence += other.Intelligence;
-            }
+            a.Strength += b.Strength;
+            a.Dexterity += b.Dexterity;
+            a.Intelligence += b.Intelligence;
+
+            return a;
         }
     }
 }
