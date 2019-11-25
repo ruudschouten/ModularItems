@@ -1,0 +1,3 @@
+[submodule "Submodule/ModularStats"]
+	path = Submodule/ModularStats
+	url = https://github.com/ruudschouten/ModularStats

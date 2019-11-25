@@ -48,6 +48,23 @@ MonoBehaviour:
   maxAmount: 1
   statistics:
     level: 0
-    strength: 7
-    dexterity: 0
-    intelligence: 0
+    attributes:
+      strength: 6
+      dexterity: 0
+      intelligence: 0
+    flatDamage: []
+    resources:
+      health: 0
+      maxHealth: 0
+      spirit: 0
+      maxSpirit: 0
+    offensive:
+      attackSpeed: 0
+      chanceToCrit: 0
+      critMultiplier: 0
+      globalDamageModifier: 0
+    defensive:
+      armourRating: 0
+      evasionRating: 0
+    utility:
+      movementSpeed: 0

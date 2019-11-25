@@ -1,8 +1,7 @@
 ﻿using System;
+using Modifiers;
 using ScriptableObjects.Types;
 using Stats;
-using Stats.Modifiers;
-using UnityEngine;
 
 [Serializable]
 public class DamageDictionary : SerializableDictionary<DamageType, DamageStat> {}
