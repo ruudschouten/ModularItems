@@ -11,27 +11,30 @@ namespace Stats
         [SerializeField] private int _index;
         
         [SerializeField] private DamageType type;
-        [SerializeField] private int min;
-        [SerializeField] private int max;
+        [SerializeField] private MinMaxInt damage;
+        [SerializeField] private MinMaxFloat modifier;
 
         public DamageType Type => type;
-        public int Min => min;
-        public int Max => max;
+        public MinMaxInt Damage => damage;
+        public MinMaxFloat Modifier => modifier;
 
-        public DamageStat(DamageType type, int min, int max)
+        public DamageStat(DamageType type, MinMaxInt damage)
         {
             this.type = type;
-            this.min = min;
-            this.max = max;
+            this.damage = damage;
         }
 
-        public bool IsNotNull()
+        public DamageStat(DamageType type, MinMaxInt damage, MinMaxFloat modifier) : this(type, damage)
         {
-            return (min != 0 && max != 0);
+            this.modifier = modifier;
         }
-        
-        public float GetDamageAverage() {
-            return (Min + Max / 2);
-        }
+
+        public static DamageStat operator +(DamageStat a, DamageStat b)
+        {
+            a.damage += b.Damage;
+            a.modifier += b.Modifier;
+            
+            return a;
+        } 
     }
 }

@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2859583888682851785}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: ed73b48d25657dc4aa62540a1d62cd86,
-        type: 3}
-      propertyPath: m_Name
-      value: pommel
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ed73b48d25657dc4aa62540a1d62cd86,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,6 +77,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ed73b48d25657dc4aa62540a1d62cd86,
+        type: 3}
+      propertyPath: m_Name
+      value: pommel
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: ed73b48d25657dc4aa62540a1d62cd86,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -96,11 +96,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: m_Name
-      value: Pommel Component Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: preferredPosition.Array.size
@@ -147,6 +142,26 @@ PrefabInstance:
         type: 3}
       propertyPath: itemLevel
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].modifier.min
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].modifier.max
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: requirements.level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: m_Name
+      value: Pommel Component Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8053860632355177342, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}

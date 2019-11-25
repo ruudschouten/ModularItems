@@ -10,10 +10,13 @@ namespace Editor
     public class DamageStatDrawer : PropertyDrawer
     {
         private bool _backgroundDrawn;
+        private float _rectSpacing = 5;
+        private float _height = EditorGUIUtility.singleLineHeight;
+        private GUIStyle _labelStyle = EditorStyles.miniLabel;
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return (EditorGUIUtility.singleLineHeight * 2) + 10;
+            return (EditorGUIUtility.singleLineHeight + _rectSpacing) * 3;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -22,9 +25,15 @@ namespace Editor
             typeHelper.LoadTypes();
             // Get properties
             var damageType = property.FindPropertyRelative("type");
-            var minValue = property.FindPropertyRelative("min");
-            var maxValue = property.FindPropertyRelative("max");
             var index = property.FindPropertyRelative("_index");
+            
+            var damage = property.FindPropertyRelative("damage");
+            var damageMin = damage.FindPropertyRelative("min");
+            var damageMax = damage.FindPropertyRelative("max");
+            
+            var modifier = property.FindPropertyRelative("modifier");
+            var modifierMin = modifier.FindPropertyRelative("min");
+            var modifierMax = modifier.FindPropertyRelative("max");
 
             // Using BeginProperty / EndProperty on the parent property means that
             // prefab override logic works on the entire property.
@@ -45,31 +54,37 @@ namespace Editor
                 GUIContent.none, EditorStyles.helpBox);
 
             // Calculate rects
-            var nextLine = position.y + EditorGUIUtility.singleLineHeight + 5;
-            var labelWidth = 35;
+            var secondLine = position.y + _height + _rectSpacing;
+            var thirdLine = position.y + (_height + _rectSpacing) * 2;
+            var minMaxLabelWidth = 35;
 
+            DrawTypeDropdown(position, index, typeHelper, damageType);
+            DrawMinMax(position, secondLine, minMaxLabelWidth, "Damage", 45, 
+                damageMin, damageMax);
+            DrawMinMax(position, thirdLine, minMaxLabelWidth, "Modifier", 45, 
+                modifierMin, modifierMax);
+
+            // Set indent back to what it was
+            EditorGUI.indentLevel = indent;
+
+            EditorGUI.EndProperty();
+        }
+
+        private void DrawTypeDropdown(Rect position, SerializedProperty index, DamageTypeHelper typeHelper, 
+            SerializedProperty damageType)
+        {
             var prevXmin = position.xMin;
-            
-            var typeLabelRect = new Rect(position.x, position.y, 70, EditorGUIUtility.singleLineHeight);
-            position.xMin = typeLabelRect.xMax + 5;
-            var typeRect = new Rect(position.x, position.y, position.width - 5, EditorGUIUtility.singleLineHeight);
-            position.xMin = prevXmin;
-            
-            var minLabelRect = new Rect(position.x, nextLine, labelWidth, EditorGUIUtility.singleLineHeight);
-            position.xMin = minLabelRect.xMax + 5;
-            var minRect = new Rect(position.x, nextLine, position.center.x - (minLabelRect.xMax + 5), EditorGUIUtility.singleLineHeight);
-            position.xMin = minRect.xMax + 5;
-            var maxLabelRect = new Rect(position.x, nextLine, labelWidth, EditorGUIUtility.singleLineHeight);
-            position.xMin = maxLabelRect.xMax + 5;
-            var maxRect = new Rect(maxLabelRect.xMax, nextLine, position.width, EditorGUIUtility.singleLineHeight);
+
+            var typeLabelRect = new Rect(position.x, position.y, 70, _height);
+            position.xMin = typeLabelRect.xMax + _rectSpacing;
+
+            var typeRect = new Rect(position.x, position.y, position.width - _rectSpacing, _height);
             position.xMin = prevXmin;
 
-            var labelStyle = EditorStyles.miniLabel;
-            
             EditorGUI.BeginChangeCheck();
 
-            EditorGUI.LabelField(typeLabelRect, "Damage Type", labelStyle);
-            
+            EditorGUI.LabelField(typeLabelRect, "Damage Type", _labelStyle);
+
             index.intValue = EditorGUI.Popup(typeRect, index.intValue, typeHelper.GetStringTypes(),
                 EditorStyles.toolbarDropDown);
             if (EditorGUI.EndChangeCheck())
@@ -80,16 +95,36 @@ namespace Editor
             {
                 index.intValue = typeHelper.GetIndex(damageType.objectReferenceValue as DamageType);
             }
-            
-            EditorGUI.LabelField(minLabelRect, "Min", labelStyle);
-            EditorGUI.PropertyField(minRect, minValue, GUIContent.none);
-            EditorGUI.LabelField(maxLabelRect, "Max", labelStyle);
-            EditorGUI.PropertyField(maxRect, maxValue, GUIContent.none);
+        }
 
-            // Set indent back to what it was
-            EditorGUI.indentLevel = indent;
+        private void DrawMinMax(Rect position, float yPosition, int labelWidth, string fieldIdentifier,
+            int identifierWidth, SerializedProperty min, SerializedProperty max)
+        {
+            // After setting the values for a rectangle, update the positions min values, so position.x can be easily 
+            // used as the starting position for the next rect
+            var prevXmin = position.xMin;
+            var labelRect = new Rect(position.x, yPosition, identifierWidth, _height);
+            position.xMin = labelRect.xMax + _rectSpacing;
 
-            EditorGUI.EndProperty();
+            var minLabelRect = new Rect(position.x, yPosition, labelWidth, _height);
+            position.xMin = minLabelRect.xMax;
+
+            var minRect = new Rect(position.x, yPosition, 
+                position.center.x - (position.xMin + minLabelRect.width / 2), _height);
+            position.xMin = minRect.xMax + _rectSpacing;
+
+            var maxLabelRect = new Rect(position.x, yPosition, labelWidth, _height);
+            position.xMin = maxLabelRect.xMax + _rectSpacing;
+
+            var maxRect = new Rect(maxLabelRect.xMax, yPosition, position.width, _height);
+            // Reset the position min X to the stored value before creating these rects 
+            position.xMin = prevXmin;
+
+            EditorGUI.LabelField(labelRect, fieldIdentifier, _labelStyle);
+            EditorGUI.LabelField(minLabelRect, "Min", _labelStyle);
+            EditorGUI.PropertyField(minRect, min, GUIContent.none);
+            EditorGUI.LabelField(maxLabelRect, "Max", _labelStyle);
+            EditorGUI.PropertyField(maxRect, max, GUIContent.none);
         }
     }
 }

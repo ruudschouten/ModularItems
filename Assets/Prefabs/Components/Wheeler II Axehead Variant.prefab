@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wheeler II Axehead Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: preferredPosition.Array.size
@@ -104,6 +99,26 @@ PrefabInstance:
       propertyPath: itemLevel
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: requirements.attributes.strength
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].damage.min
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].damage.max
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wheeler II Axehead Variant
+      objectReference: {fileID: 0}
     - target: {fileID: 8053860632355177342, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,11 +194,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2592650132082156762}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 531091989313eee48abf0a3debfa3131,
-        type: 3}
-      propertyPath: m_Name
-      value: wheeler_ii_axehead
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 531091989313eee48abf0a3debfa3131,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -253,6 +263,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 531091989313eee48abf0a3debfa3131,
+        type: 3}
+      propertyPath: m_Name
+      value: wheeler_ii_axehead
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 531091989313eee48abf0a3debfa3131,
         type: 3}

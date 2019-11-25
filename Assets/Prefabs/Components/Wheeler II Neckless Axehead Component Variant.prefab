@@ -7,11 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
-        type: 3}
-      propertyPath: m_Name
-      value: Wheeler II Neckless Axehead Component Variant
-      objectReference: {fileID: 0}
     - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: preferredPosition.Array.size
@@ -92,6 +87,21 @@ PrefabInstance:
       propertyPath: itemLevel
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].damage.min
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: damage.Array.data[0].damage.max
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053860632355177337, guid: 2fc764c580956368eb5100bcf370223e,
+        type: 3}
+      propertyPath: m_Name
+      value: Wheeler II Neckless Axehead Component Variant
+      objectReference: {fileID: 0}
     - target: {fileID: 8053860632355177342, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -162,11 +172,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3614725462638509599}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: afa6c0d585981174c8cf4c7f4f0270e1,
-        type: 3}
-      propertyPath: m_Name
-      value: wheeler_ii_axehead_neckless
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: afa6c0d585981174c8cf4c7f4f0270e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -236,6 +241,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: afa6c0d585981174c8cf4c7f4f0270e1,
+        type: 3}
+      propertyPath: m_Name
+      value: wheeler_ii_axehead_neckless
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: afa6c0d585981174c8cf4c7f4f0270e1,
         type: 3}

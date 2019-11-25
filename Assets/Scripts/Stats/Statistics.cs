@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Stats
@@ -7,43 +8,28 @@ namespace Stats
     public class Statistics
     {
         [SerializeField] private int level;
-        [SerializeField] private int strength;
-        [SerializeField] private int dexterity;
-        [SerializeField] private int intelligence;
-        
+        [SerializeField] private Attributes attributes = new Attributes();
+        [SerializeField] private List<DamageStat> flatDamage = new List<DamageStat>();
+        [SerializeField] private Offensive offensive = new Offensive();
+        [SerializeField] private Defensive defensive = new Defensive();
+        [SerializeField] private Utility utility = new Utility();
+
         public int Level
         {
             get => level;
             set => level = value;
         }
 
-        public int Strength
-        {
-            get => strength;
-            set => strength = value;
-        }
+        public Attributes Attributes => attributes;
 
-        public int Dexterity
-        {
-            get => dexterity;
-            set => dexterity = value;
-        }
-
-        public int Intelligence
-        {
-            get => intelligence;
-            set => intelligence = value;
-        }
-        
         public static Statistics operator +(Statistics a, Statistics b)
         {
             var stats = new Statistics
             {
-                Level = a.level + b.level,
-                Strength = a.Strength + b.Strength,
-                Dexterity = a.Dexterity + b.Dexterity,
-                Intelligence = a.Intelligence + b.Intelligence
+                Level = a.level + b.level
             };
+            
+            stats.attributes.Apply(b.attributes);
 
             return stats;
         }
