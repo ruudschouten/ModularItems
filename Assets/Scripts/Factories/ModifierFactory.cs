@@ -1,8 +1,8 @@
 using System;
 using System.Linq;
 using Items;
+using Modifiers;
 using ScriptableObjects.Collections;
-using Stats.Modifiers;
 using UnityEngine;
 
 namespace Factories

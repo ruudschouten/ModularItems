@@ -1,5 +1,5 @@
 using System;
-using Stats.Modifiers;
+using Modifiers;
 using UnityEngine;
 
 namespace Items

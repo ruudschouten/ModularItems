@@ -120,13 +120,13 @@ PrefabInstance:
     - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: damage.Array.data[0]._index
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
       propertyPath: damage.Array.data[0].type
       value: 
-      objectReference: {fileID: 11400000, guid: 222d9ac3d4ae95bb69e763bbdcbb4c88,
+      objectReference: {fileID: 11400000, guid: deb734ebd5273e243b16c8cb91db8a26,
         type: 2}
     - target: {fileID: 152153560491424081, guid: 2fc764c580956368eb5100bcf370223e,
         type: 3}
