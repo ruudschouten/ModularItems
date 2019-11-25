@@ -58,10 +58,11 @@ namespace Items
                     {
                         if (!damage.ContainsKey(damageStat.Type))
                         {
-                            damage.Add(damageStat.Type, new MinMaxInt());
+                            damage.Add(damageStat.Type, damageStat);
+                            continue;
                         }
 
-                        damage[damageStat.Type] += new MinMaxInt(damageStat.Min, damageStat.Max);
+                        damage[damageStat.Type] += damageStat;
                     }
                 }
 

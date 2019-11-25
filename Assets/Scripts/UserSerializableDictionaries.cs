@@ -5,7 +5,7 @@ using Stats.Modifiers;
 using UnityEngine;
 
 [Serializable]
-public class DamageDictionary : SerializableDictionary<DamageType, MinMaxInt> {}
+public class DamageDictionary : SerializableDictionary<DamageType, DamageStat> {}
 
 [Serializable]
 public class ItemRarityWeights : SerializableDictionary<ItemRarity, float> {}
