@@ -7,33 +7,29 @@ namespace Stats
     public class Requirements
     {
         [SerializeField] private int level;
-        [SerializeField] private int strength;
-        [SerializeField] private int dexterity;
-        [SerializeField] private int intelligence;
+        [SerializeField] private Attributes attributes;
         
         public int Level => level;
-        public int Strength => strength;
-        public int Dexterity => dexterity;
-        public int Intelligence => intelligence;
+        public int Strength => attributes.Strength;
+        public int Dexterity => attributes.Dexterity;
+        public int Intelligence => attributes.Intelligence;
 
         public Requirements(int level)
         {
             this.level = level;
         }
 
-        public Requirements(int level, int strength, int dexterity, int intelligence) : this(level)
+        public Requirements(int level, Attributes attributes) : this(level)
         {
-            this.strength = strength;
-            this.dexterity = dexterity;
-            this.intelligence = intelligence;
+            this.attributes = attributes;
         }
 
         public bool AreMet(Statistics stats)
         {
             if (stats.Level < Level) return false;
-            if (stats.Strength < Strength) return false;
-            if (stats.Dexterity < Dexterity) return false;
-            if (stats.Intelligence < Intelligence) return false;
+            if (stats.Attributes.Strength < Strength) return false;
+            if (stats.Attributes.Dexterity < Dexterity) return false;
+            if (stats.Attributes.Intelligence < Intelligence) return false;
             return true;
         }
     }
